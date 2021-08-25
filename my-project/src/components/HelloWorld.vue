@@ -2,12 +2,21 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>여기는 위ㅣㅣㅣ</h2>
-    <router-link to="/test">
-      <h2>여기는 path 가 /test</h2>
+    <router-link to="/user/testUSER">
+      <h2>여기는 path 가 /user/:id</h2>
     </router-link>
     <router-link to="/">
       <h2>여기는 path 가 /</h2>
     </router-link>
+
+    <!-- router-link와 push  -->
+    <router-link to="/push">
+      <h2>여기는 path 가 /push</h2>
+    </router-link>
+    <router-link to="/programing">
+      <h2>여기는 path 가 /programing</h2>
+    </router-link>
+
     <ul>
       <li>
         <a href="https://vuejs.org" target="_blank">

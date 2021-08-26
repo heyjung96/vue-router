@@ -5,8 +5,9 @@
 </template>
 
 <script>
+// import notFoundChildren from "./NotFoundChildren.vue";
 export default {
-  name: "push",
+  name: "programing",
   data() {
     return {
       msg: "프로그래밍 방식 네비게이션 (๑′ᴗ‵๑)"

@@ -6,8 +6,6 @@
     <router-link :to="{ name: 'home' }">
       <h3>여기는 path 가 home</h3>
     </router-link>
-    <!-- 리터럴 string -->
-    <router-link to="/">/</router-link>
 
     <button v-on:click="btn(-1)">history.back(-1)</button>
     <button @click="btn(-2)">history.back(-2)</button>
@@ -21,12 +19,15 @@ export default {
   name: "push",
   data() {
     return {
-      msg: "router-link와 push 테스트하는 곳입니다 (๑′ᴗ‵๑)"
+      msg:
+        "[프로그래밍 방식 네비게이션] (๑′ᴗ‵๑)] router-link와 push 테스트하는 곳입니다 (๑′ᴗ‵๑)"
     };
   },
   methods: {
     btn(history) {
       console.log("history", history);
+      console.log("this.$router", this.$router);
+      console.log("this.$route", this.$route);
       this.$router.go(history);
     }
   }

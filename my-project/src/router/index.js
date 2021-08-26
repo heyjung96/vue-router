@@ -14,34 +14,45 @@ const User = {
   template: `
     <div class="user">
       <h2>$route.params.id 이름은 ~> {{ $route.params.id }}</h2>
-      <router-view></router-view>
       <h2>id 의 이름은 ~> {{ id }} </h2>
       <router-link to="/">
         <h3>GO HOME >>> </h3>
       </router-link>
+      <router-view></router-view>
+
+      <h2>--------------------------</h2>
+        <h3> ID가 바뀐다 ! </h3>
+        <router-link :to="{path : 'profile'}">
+          <div> router-link :to="{path : 'profile'}" </div>
+        </router-link>
+
+      <h2>--------------------------</h2>
+        <h3>이쪽 아래를 클릭하면 프로필 영역이 생길것입니다 ,, </h3>
+        <router-link :to="{name : 'profile'}">
+          <div> router-link :to="{name : 'profile'}"  </div>
+        </router-link>
+        <router-link v-bind:to="{name : 'profile'}">
+          <div> router-link v-bind:to="{name : 'profile'}"  </div>
+        </router-link>
+        <router-link :to="'profile'" append>
+          <div> router-link :to="'profile'" append   </div>
+        </router-link>
+
 
 
       <h2>--------------------------</h2>
-      <h3>이쪽 아래를 클릭하면 프로필 영역이 생길것입니다 ,, </h3>
-      <router-link :to="{name : 'profile'}">
-        <div>:to user/test/profile  </div>
-      </router-link>
-      <router-link v-bind:to="{name : 'profile'}">
-        <div>to="{name : 'profile'}"  </div>
-      </router-link>
-      <router-link :to="{path : 'profile'}" append>
-        <div> path : /profile 에다가 append   </div>
-      </router-link>
-      <h2>--------------------------</h2>
+        <h3>제일 바깥쪽의 Not Found 페이지로 갈 것입니다요 </h3>
+        <router-link :to="'/profile'">
+          <div>:to="'/profile'" >>> </div>
+        </router-link>
 
-
-
-      <router-link :to="'/profile'">
-        <div>:to="'/profile'" >>> </div>
-      </router-link>
+        <router-link to="/profile">
+          <div>to="'/profile'" >>> </div>
+        </router-link>
 
 
       <h2>--------------------------</h2>
+      <h3>children의 Not Found 페이지로 갈 것입니다요 </h3>
       <router-link to="/user/TEST/error">
         <div>GO 404 : 하위에서 알수없는 경로로 이동 >>> </div>
       </router-link>

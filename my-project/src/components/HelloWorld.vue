@@ -8,6 +8,9 @@
     <router-link to="/">
       <h3>여기는 path 가 /</h3>
     </router-link>
+    <router-link to="/comp/user/componentIDTest">
+      <h3>여기는 path 가 /comp/user/componentIDTest</h3>
+    </router-link>
 
     <!-- router-link와 push  -->
     <router-link to="/push">

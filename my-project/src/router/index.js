@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import home from "@/components/HelloWorld";
+import compUser from "@/components/User";
 import push from "@/components/push";
 import programing from "@/components/linkPrograming";
 import notFound from "@/components/NotFound";
@@ -74,6 +75,7 @@ export default new Router({
   mode: "history",
   routes: [
     { path: "/", name: "home", component: home },
+    { path: "/comp/user/:id", name: "compUser", component: compUser },
     {
       path: "/user/:id",
       name: "user",

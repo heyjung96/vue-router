@@ -11,6 +11,11 @@
     <button @click="btn(-2)">history.back(-2)</button>
     <button v-on:click="btn(1)">history.back(1)</button>
     <button @click="btn(2)">history.back(2)</button>
+    <button @click="$router.push('/')">$router.push('/')</button>
+
+    <button @click="$router.push({ name: 'user', params: { id: push123 } })">
+      $router.push({ name: 'user', params: { id: push123 }}
+    </button>
   </div>
 </template>
 
@@ -28,6 +33,7 @@ export default {
       console.log("history", history);
       console.log("this.$router", this.$router);
       console.log("this.$route", this.$route);
+      console.log("$router", $router);
       this.$router.go(history);
     }
   }

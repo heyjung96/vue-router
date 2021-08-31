@@ -22,9 +22,12 @@ const User = {
       <router-view></router-view>
 
       <h2>--------------------------</h2>
-        <h3> ID가 바뀐다 ! </h3>
+        <h3> ID가 바뀐다s ! </h3>
         <router-link :to="{path : 'profile'}">
           <div> router-link :to="{path : 'profile'}" </div>
+        </router-link>
+        <router-link :to="'profile'">
+          <div> router-link :to="profile" </div>
         </router-link>
 
       <h2>--------------------------</h2>

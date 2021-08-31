@@ -4,6 +4,9 @@
     <router-link to="/">
       <h3>GO HOME >>></h3>
     </router-link>
+    <router-link :to="'changeIDTest'">
+      <div>router-link :to="changeIDTest"</div>
+    </router-link>
     <router-view></router-view>
   </div>
 </template>

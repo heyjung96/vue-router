@@ -7,7 +7,15 @@
     <router-link :to="'changeIDTest'">
       <div>router-link :to="changeIDTest"</div>
     </router-link>
+
+    <h2>--------------------------</h2>
+    <h3>children의 Not Found 페이지로 갈 것입니다요</h3>
+    <router-link :to="'테스투/error'">
+      <div>GO 404 : 하위에서 알수없는 경로로 이동 >>></div>
+    </router-link>
+    -----------
     <router-view></router-view>
+    ------------
   </div>
 </template>
 

@@ -1,51 +1,55 @@
 <template>
-  <div id="app">
-    <img
-      style="height : 350px"
-      src="https://cdn.hellodd.com/news/photo/202005/71835_craw1.jpg"
-    />
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
 
-    <router-view />
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
 
-    <!--
-      그냥 example 이런식으로 사용하면 컴포넌트를 직접 불러와서 그리는 방식이기때문에 어느 페이지를 가도 해당 화면이 보이게 된다.
-      특정 페이지에서만 보이고 싶으면 router-view를 사용. 라우터 설정시 component's' 복수형으로 선언하고 오브젝트 형식으로 담아주면 특정 페이지에서만 보이게 된다.
-    -->
-    <!-- <example /> -->
-    <!-- <router-view name="notFoundChildren"></router-view> -->
-    <router-view name="example"></router-view>
-  </div>
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import example from "./components/example.vue";
+
 export default {
-  name: "App",
-  components: { example }
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
-  margin-bottom: 100px;
-}
-#img {
-  height: 30px;
-}
-h1,
-h2 {
-  font-weight: normal;
-}
-a {
-  color: #42b983;
-}
-div {
-  margin: 10px;
-}
-</style>

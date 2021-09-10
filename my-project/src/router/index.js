@@ -6,7 +6,7 @@ import push from "@/components/push";
 import programing from "@/components/linkPrograming";
 import notFound from "@/components/NotFound";
 import notFoundChildren from "@/components/NotFoundChildren";
-import example from "@/components/example";
+import example2 from "@/components/example";
 
 Vue.use(Router);
 
@@ -78,7 +78,15 @@ export default new Router({
   mode: "history",
   routes: [
     { path: "/", name: "home", component: home },
-    { path: "/comp/user/:id", name: "compUser", component: compUser },
+    {
+      path: "/comp/user/:id",
+      name: "compUser",
+      component: compUser,
+      children: [
+        { path: "profile", name: "profile", component: UserProfile },
+        { path: "*", component: notFoundChildren }
+      ]
+    },
     {
       path: "/user/:id",
       name: "user",
@@ -109,7 +117,7 @@ export default new Router({
     {
       path: "/example",
       name: "example",
-      components: { default: push, example: example }
+      components: { default: push, example2: example2 }
     },
     //GO NOT FOUND PAGE
     { path: "*", component: notFound }
